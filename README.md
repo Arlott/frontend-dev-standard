@@ -13,7 +13,7 @@
 | [`@fds/prettier-config`](./packages/prettier-config) | 0.1.0 | Prettier 配置 |
 | [`@fds/stylelint-config`](./packages/stylelint-config) | 0.1.0 | Stylelint 配置 |
 | [`@fds/commitlint-config`](./packages/commitlint-config) | 0.1.0 | Commitlint 配置 |
-| [`@fds/tsconfig`](./packages/tsconfig) | 0.1.0 | TypeScript 配置（base / node / react / vue）|
+| [`@fds/tsconfig`](./packages/tsconfig) | 0.1.0 | TypeScript 配置（base / browser / node / react / vue）|
 
 ## 快速开始
 
@@ -29,8 +29,17 @@ fds init -t react
 # 交互式初始化（Vue 项目）
 fds init -t vue
 
+# 初始化 Svelte 项目，跳过确认提示
+fds init -t svelte -y
+
 # 初始化 Node 项目，跳过确认提示
 fds init -t node -y
+
+# 初始化通用浏览器/前端项目（vanilla、angular 等）
+fds init -t vanilla -y
+
+# 未指定模板时，交互式选择
+fds init
 ```
 
 ### 手动安装各配置包
@@ -142,6 +151,12 @@ npm install -D @fds/tsconfig typescript
 
 // Vue 项目
 { "extends": "@fds/tsconfig/vue.json" }
+
+// 通用浏览器/前端项目（Svelte、Angular、Vanilla 等）
+{ "extends": "@fds/tsconfig/browser.json" }
+
+// 纯 TypeScript / 其他
+{ "extends": "@fds/tsconfig/base.json" }
 ```
 
 ## 示例项目

@@ -15,13 +15,15 @@ export async function generateEslintConfig(config: ProjectConfig): Promise<void>
   extends: ['@fds/eslint-config-vue'],
 };
 `,
-    node: `module.exports = {
-  extends: ['@fds/eslint-config-base'],
-};
-`,
   };
 
-  const content = configMap[template];
+  const content =
+    configMap[template] ??
+    `module.exports = {
+  extends: ['@fds/eslint-config-base'],
+};
+`;
+
   const filePath = path.join(cwd, '.eslintrc.js');
 
   if (await fs.pathExists(filePath)) {

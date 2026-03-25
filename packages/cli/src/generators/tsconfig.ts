@@ -12,15 +12,18 @@ export async function generateTsConfig(config: ProjectConfig): Promise<void> {
     node: '@fds/tsconfig/node.json',
   };
 
-  const content = JSON.stringify(
-    {
-      extends: extendsMap[template],
-      include: ['src'],
-      exclude: ['node_modules', 'dist'],
-    },
-    null,
-    2,
-  ) + '\n';
+  const tsExtends = extendsMap[template] ?? '@fds/tsconfig/browser.json';
+
+  const content =
+    JSON.stringify(
+      {
+        extends: tsExtends,
+        include: ['src'],
+        exclude: ['node_modules', 'dist'],
+      },
+      null,
+      2,
+    ) + '\n';
 
   const filePath = path.join(cwd, 'tsconfig.json');
 

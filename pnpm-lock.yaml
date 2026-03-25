@@ -154,10 +154,10 @@ importers:
   packages/commitlint-config:
     dependencies:
       '@commitlint/cli':
-        specifier: '>=18.0.0'
+        specifier: '>=19.0.0'
         version: 20.5.0(@types/node@20.19.37)(conventional-commits-parser@6.3.0)(typescript@5.9.3)
       '@commitlint/config-conventional':
-        specifier: '>=18.0.0'
+        specifier: '>=19.0.0'
         version: 20.5.0
 
   packages/eslint-config-base:
@@ -223,7 +223,7 @@ importers:
   packages/stylelint-config:
     dependencies:
       stylelint:
-        specifier: '>=15.0.0'
+        specifier: '>=16.0.0'
         version: 16.26.1(typescript@5.9.3)
 
   packages/tsconfig: {}

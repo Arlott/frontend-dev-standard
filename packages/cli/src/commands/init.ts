@@ -12,12 +12,12 @@ import { generateHuskyConfig } from '../generators/husky';
 import { installDependencies } from '../utils/install';
 
 export interface InitOptions {
-  template: 'react' | 'vue' | 'node';
+  template: string;
   yes?: boolean;
 }
 
 export interface ProjectConfig {
-  template: 'react' | 'vue' | 'node';
+  template: string;
   features: string[];
   cwd: string;
 }
@@ -36,17 +36,27 @@ export async function initCommand(options: InitOptions): Promise<void> {
       cwd,
     };
   } else {
+    const templateChoices = [
+      { title: 'React', value: 'react' },
+      { title: 'Vue', value: 'vue' },
+      { title: 'Svelte', value: 'svelte' },
+      { title: 'Angular', value: 'angular' },
+      { title: 'Vanilla JS/TS (Browser)', value: 'vanilla' },
+      { title: 'Node.js', value: 'node' },
+      { title: 'Other', value: 'base' },
+    ];
+    const templateInitialIndex = Math.max(
+      0,
+      templateChoices.findIndex((c) => c.value === options.template),
+    );
+
     const answers = await prompts([
       {
         type: 'select',
         name: 'template',
         message: 'Select project template:',
-        choices: [
-          { title: 'React', value: 'react' },
-          { title: 'Vue', value: 'vue' },
-          { title: 'Node.js', value: 'node' },
-        ],
-        initial: options.template === 'react' ? 0 : options.template === 'vue' ? 1 : 2,
+        choices: templateChoices,
+        initial: templateInitialIndex,
       },
       {
         type: 'multiselect',
@@ -89,7 +99,7 @@ export async function initCommand(options: InitOptions): Promise<void> {
   if (config.features.includes('eslint')) {
     generators.push(() => generateEslintConfig(config));
   }
-  if (config.features.includes('stylelint') && config.template !== 'node') {
+  if (config.features.includes('stylelint')) {
     generators.push(() => generateStylelintConfig(config));
   }
   if (config.features.includes('commitlint')) {

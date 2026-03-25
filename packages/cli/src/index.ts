@@ -10,7 +10,7 @@ program
 program
   .command('init')
   .description('Initialize frontend-dev-standard in your project')
-  .option('-t, --template <template>', 'Project template (react|vue|node)', 'node')
+  .option('-t, --template <template>', 'Project template (react|vue|svelte|angular|vanilla|node|base)', 'base')
   .option('-y, --yes', 'Skip prompts and use defaults')
   .action(initCommand);
 
