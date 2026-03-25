@@ -1,0 +1,16 @@
+{
+  "name": "@fds/stylelint-config",
+  "version": "0.1.0",
+  "description": "Shared Stylelint configuration for frontend-dev-standard",
+  "license": "MIT",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "index.js"
+  ],
+  "peerDependencies": {
+    "stylelint": ">=15.0.0"
+  }
+}

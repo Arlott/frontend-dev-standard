@@ -1,0 +1,25 @@
+{
+  "name": "@fds/eslint-config-base",
+  "version": "0.1.0",
+  "description": "Base ESLint configuration for frontend-dev-standard",
+  "license": "MIT",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "peerDependencies": {
+    "eslint": ">=8.0.0",
+    "@typescript-eslint/eslint-plugin": ">=7.0.0",
+    "@typescript-eslint/parser": ">=7.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.0"
+  }
+}

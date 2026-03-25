@@ -1,0 +1,5 @@
+{
+  "extends": "@fds/tsconfig/vue.json",
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

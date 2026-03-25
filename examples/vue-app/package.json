@@ -1,0 +1,25 @@
+{
+  "name": "vue-app-example",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Example Vue app using frontend-dev-standard",
+  "scripts": {
+    "lint": "eslint src --ext .ts,.vue",
+    "format": "prettier --write src"
+  },
+  "devDependencies": {
+    "@fds/eslint-config-vue": "workspace:*",
+    "@fds/prettier-config": "workspace:*",
+    "@fds/tsconfig": "workspace:*",
+    "@fds/stylelint-config": "workspace:*",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.28.0",
+    "vue-eslint-parser": "^9.4.3",
+    "prettier": "^3.3.3",
+    "stylelint": "^16.8.2",
+    "stylelint-config-standard": "^36.0.1",
+    "typescript": "^5.4.5"
+  }
+}
