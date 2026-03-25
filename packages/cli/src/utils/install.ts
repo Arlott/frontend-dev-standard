@@ -33,7 +33,7 @@ function getDependencies(config: ProjectConfig): DepMap {
     devDeps.push('@fds/prettier-config');
   }
 
-  if (features.includes('stylelint') && template !== 'node') {
+  if (features.includes('stylelint')) {
     devDeps.push('stylelint');
     devDeps.push('stylelint-config-standard');
     devDeps.push('@fds/stylelint-config');

@@ -4,7 +4,7 @@ import pc from 'picocolors';
 import type { ProjectConfig } from '../commands/init';
 
 export async function generateHuskyConfig(config: ProjectConfig): Promise<void> {
-  const { cwd, template } = config;
+  const { cwd } = config;
 
   // Update or create package.json to add lint-staged config
   const pkgPath = path.join(cwd, 'package.json');
@@ -28,7 +28,7 @@ export async function generateHuskyConfig(config: ProjectConfig): Promise<void> 
       '*.{json,md,yaml,yml}': ['prettier --write'],
     };
 
-    if (template !== 'node') {
+    if (config.features.includes('stylelint')) {
       lintStagedConfig['*.{css,scss,less}'] = ['stylelint --fix', 'prettier --write'];
     }
 
