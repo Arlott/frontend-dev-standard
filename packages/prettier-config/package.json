@@ -1,0 +1,16 @@
+{
+  "name": "@fds/prettier-config",
+  "version": "0.1.0",
+  "description": "Shared Prettier configuration for frontend-dev-standard",
+  "license": "MIT",
+  "main": "index.json",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "index.json"
+  ],
+  "peerDependencies": {
+    "prettier": ">=3.0.0"
+  }
+}
